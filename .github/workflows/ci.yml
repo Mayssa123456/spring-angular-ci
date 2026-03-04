@@ -19,17 +19,9 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Build Spring Boot project
-        run: |
-         cd springboot/app
-         chmod +x mvnw
-         ./mvnw clean package -DskipTests
-
       - name: Build Backend Image
         run: |
           docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/backend-app ./springboot/app
-
-     
 
       - name: Build Frontend Image
         run: |
