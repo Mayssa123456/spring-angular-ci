@@ -21,7 +21,7 @@ jobs:
 
       - name: Build Backend Image
         run: |
-          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/backend-app ./springboot
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/backend-app ./springboot/app
 
       - name: Build Frontend Image
         run: |
